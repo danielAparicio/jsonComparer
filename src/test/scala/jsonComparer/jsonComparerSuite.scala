@@ -4,6 +4,8 @@ import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
 import org.scalatest.exceptions.TestFailedException
 import org.scalatest.FunSuite
+import org.json4s.Formats._
+import org.json4s.JsonAST.JString
 
 
 @RunWith(classOf[JUnitRunner])
@@ -27,5 +29,20 @@ class jsonComparerSuite extends FunSuite{
     assert(tuple3._1 === jsonComparerData.jsonRA3, "A3 is equal")
     assert(tuple3._2 === jsonComparerData.jsonRB3, "B3 is equal")
   } 
+  
+  test("trnaksformation and extraction test") {
+    
+    implicit lazy val formats = org.json4s.DefaultFormats
+    
+    val temp = jsonComparerData.jsonRA2 transformField {
+         //transforming the type to the type that we want
+         case ("almost-common", x) => ("whateverIWant", JString("perfe"))
+        }    
+    
+    val field =  (temp \ "whateverIWant2").extractOrElse[String]("not value not found")
+    println(field)
+   
+  } 
+  
 
 }

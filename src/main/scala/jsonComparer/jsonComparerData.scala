@@ -2083,7 +2083,7 @@ object jsonComparerData {
   val jsonRA1 = parse("""{
     "prop-only-a" : "val1"
 }""")
-  val jsonRA2 = parse("""{
+  val jsonRA2 = parse("""{ 
     "prop-only-a" : {
         "nested-only-a": "a"
     },
