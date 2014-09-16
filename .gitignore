@@ -1,11 +1,11 @@
 target/
 project/
+lib_managed/
+submission/
+bin/
 .cache
 .classpath
 .project
 .settings
 .metadata
 .worksheet
-lib_managed/
-submission/
-bin/
