@@ -6,6 +6,6 @@ project/
 .settings
 .metadata
 .worksheet
-bin/
 lib_managed/
 submission/
+bin/
